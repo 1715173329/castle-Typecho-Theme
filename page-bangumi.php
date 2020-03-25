@@ -6,7 +6,7 @@
  */
 /**
  * Castle Bangumi Page
- * Last Update: 2020/03/24
+ * Last Update: 2020/03/25
  * Author: SatoSouta
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
@@ -20,7 +20,7 @@ if (@$_SERVER['HTTP_X_PJAX'] == true) {
 }
 ?>
 <meta name="referrer" content="never">
-   <div class="mdui-card moe-post-card moe-bangumi-page-card">
+   <div class="mdui-card moe-post-card moe-bangumi-page-card"<?php if(Helper::options()->TocSwitch == '1') { ?> data-toc="<?php echo ($this->fields->showToc) ? 'true' : 'false'; ?>"<?php } ?>>
     <div class="mdui-card-media">
      <div class="moe-card-cover-image lazyload" data-src="<?php
        $cover = $this->fields->cover;
